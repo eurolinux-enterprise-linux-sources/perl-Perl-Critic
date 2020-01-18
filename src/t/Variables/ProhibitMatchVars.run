@@ -1,0 +1,46 @@
+## name Basic
+## failures 9
+## cut
+
+use English qw($PREMATCH);
+use English qw($MATCH);
+use English qw($POSTMATCH);
+$`;
+$&;
+$';
+$PREMATCH;
+$MATCH;
+$POSTMATCH;
+
+
+## name Ignore case handled by RequireNoMatchVarsWithUseEnglish
+## failures 0
+## cut
+
+use English;
+
+
+## name no_match_vars
+## failures 0
+## cut
+
+use English qw(-no_match_vars);
+use English qw($EVAL_ERROR);
+
+#-----------------------------------------------------------------------------
+
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/Variables/ProhibitMatchVars.run $
+#     $Date: 2008-05-20 20:20:33 -0700 (Tue, 20 May 2008) $
+#   $Author: clonezone $
+# $Revision: 2390 $
+##############################################################################
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :

@@ -1,0 +1,59 @@
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/InputOutput/ProhibitExplicitStdin.run $
+#     $Date: 2009-03-07 07:14:51 -0800 (Sat, 07 Mar 2009) $
+#   $Author: clonezone $
+# $Revision: 3231 $
+##############################################################################
+
+## name basic passes
+## failures 0
+## cut
+
+$foo = 'STDIN';
+my $STDIN = 1;
+close STDIN;
+while (<>) {
+  print;
+}
+while (<FOO>) {
+  print;
+}
+while (<$fh>) {
+  print;
+}
+
+#-----------------------------------------------------------------------------
+
+## name basic failures
+## failures 3
+## cut
+
+$answer = <STDIN>;
+while (<STDIN>) {
+  print;
+}
+if (<STDIN> =~ /y/) {
+  remove 'tmp.txt';
+}
+
+#-----------------------------------------------------------------------------
+
+## name ppi failures
+## failures 4
+## cut
+
+$content = join '', <STDIN>;
+$content = join('', <STDIN>);
+$content = join $var, <STDIN>;
+$content = join($var, <STDIN>);
+
+#-----------------------------------------------------------------------------
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :

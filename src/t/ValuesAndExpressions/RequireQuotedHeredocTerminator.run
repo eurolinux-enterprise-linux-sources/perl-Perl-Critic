@@ -1,0 +1,65 @@
+## name Basic failure
+## failures 1
+## cut
+
+print <<END_QUOTE;
+Four score and seven years ago...
+END_QUOTE
+
+#-----------------------------------------------------------------------------
+
+## name Single quote passing
+## failures 0
+## cut
+
+print <<'END_QUOTE';
+Four score and seven years ago...
+END_QUOTE
+
+#-----------------------------------------------------------------------------
+
+## name Double quote passing
+## failures 0
+## cut
+
+print <<"END_QUOTE";
+Four score and seven years ago...
+END_QUOTE
+
+#-----------------------------------------------------------------------------
+
+## name RT# 25085: Spaces before HEREDOC token - w/ double quotes
+## failures 0
+## cut
+
+print <<  "END_QUOTE";
+Four score and seven years ago...
+END_QUOTE
+
+#-----------------------------------------------------------------------------
+
+## name RT# 25085: Spaces before HEREDOC token - w/ single quotes
+## failures 0
+## cut
+
+print <<  'END_QUOTE';
+The only thing we have to fear is fear itself...
+END_QUOTE
+
+#-----------------------------------------------------------------------------
+
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/ValuesAndExpressions/RequireQuotedHeredocTerminator.run $
+#     $Date: 2008-03-16 15:40:45 -0700 (Sun, 16 Mar 2008) $
+#   $Author: clonezone $
+# $Revision: 2187 $
+##############################################################################
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :

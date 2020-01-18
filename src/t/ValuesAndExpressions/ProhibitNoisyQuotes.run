@@ -1,0 +1,85 @@
+## name Basic passing
+## failures 0
+## cut
+
+$var = q{'};
+$var = q{"};
+$var = q{!!};
+$var = q{||};
+$var = "!!!";
+$var = '!!!';
+$var = 'a';
+$var = "a";
+$var = '1';
+$var = "1";
+
+#-----------------------------------------------------------------------------
+
+## name Basic failure
+## failures 4
+## cut
+
+$var = "!";
+$var = '!';
+$var = '!!';
+$var = "||";
+
+#-----------------------------------------------------------------------------
+
+## name overload pragma
+## failures 0
+## cut
+
+use overload '""';
+
+#-----------------------------------------------------------------------------
+
+## name Parentheses, braces, brackets
+## failures 0
+## cut
+
+$var = '(';
+$var = ')';
+$var = '{';
+$var = '}';
+$var = '[';
+$var = ']';
+
+$var = '{(';
+$var = ')}';
+$var = '[{';
+$var = '[}';
+$var = '[(';
+$var = '])';
+
+$var = "(";
+$var = ")";
+$var = "{";
+$var = "}";
+$var = "[";
+$var = "]";
+
+$var = "{(";
+$var = ")]";
+$var = "({";
+$var = "}]";
+$var = "{[";
+$var = "]}";
+
+#-----------------------------------------------------------------------------
+
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/ValuesAndExpressions/ProhibitNoisyQuotes.run $
+#     $Date: 2008-03-16 15:40:45 -0700 (Sun, 16 Mar 2008) $
+#   $Author: clonezone $
+# $Revision: 2187 $
+##############################################################################
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :

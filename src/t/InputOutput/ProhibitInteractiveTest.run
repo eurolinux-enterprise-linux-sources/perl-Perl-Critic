@@ -1,0 +1,32 @@
+## name basic failures
+## failures 2
+## cut
+
+-t;
+if (-t) { }
+
+#-----------------------------------------------------------------------------
+
+## name basic passes
+## failures 0
+## cut
+-toomany;
+-f _;
+
+#-----------------------------------------------------------------------------
+
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/InputOutput/ProhibitInteractiveTest.run $
+#     $Date: 2009-02-15 09:10:42 -0800 (Sun, 15 Feb 2009) $
+#   $Author: clonezone $
+# $Revision: 3116 $
+##############################################################################
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :

@@ -1,0 +1,52 @@
+## name Basic failure
+## failures 4
+## cut
+
+$var = "";
+$var = ''
+$var = '     ';
+$var = "     ";
+
+#-----------------------------------------------------------------------------
+
+## name Quote-like operator passing
+## failures 0
+## cut
+
+$var = qq{};
+$var = q{}
+$var = qq{     };
+$var = q{     };
+
+#-----------------------------------------------------------------------------
+
+## name Non-empty passing
+## failures 0
+## cut
+
+$var = qq{this};
+$var = q{that}
+$var = qq{the};
+$var = q{other};
+$var = "this";
+$var = 'that';
+$var = 'the';
+$var = "other";
+
+#-----------------------------------------------------------------------------
+
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/ValuesAndExpressions/ProhibitEmptyQuotes.run $
+#     $Date: 2009-01-24 17:44:43 -0800 (Sat, 24 Jan 2009) $
+#   $Author: clonezone $
+# $Revision: 3059 $
+##############################################################################
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :

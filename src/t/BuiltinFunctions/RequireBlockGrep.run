@@ -1,0 +1,48 @@
+## name Basic passing
+## failures 0
+## cut
+
+grep {$_ eq 'foo'}  @list;
+@matches = grep {$_ eq 'foo'}  @list;
+grep( {$_ eq 'foo'}  @list );
+@matches = grep( {$_ eq 'foo'}  @list )
+grep();
+@matches = grep();
+{grep}; # for Devel::Cover
+grelp $_ eq 'foo', @list; # deliberately misspell grep
+
+#-----------------------------------------------------------------------------
+
+## name Basic failure
+## failures 2
+## cut
+
+grep $_ eq 'foo', @list;
+@matches = grep $_ eq 'foo', @list;
+
+#-----------------------------------------------------------------------------
+
+## name Things that may look like a grep, but aren't
+## failures 0
+## cut
+
+$hash1{grep} = 1;
+%hash2 = (grep => 1);
+
+#-----------------------------------------------------------------------------
+
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/BuiltinFunctions/RequireBlockGrep.run $
+#     $Date: 2008-03-16 15:40:45 -0700 (Sun, 16 Mar 2008) $
+#   $Author: clonezone $
+# $Revision: 2187 $
+##############################################################################
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :

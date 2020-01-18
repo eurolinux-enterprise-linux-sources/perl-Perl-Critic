@@ -1,0 +1,41 @@
+## name Basic failure
+## failures 6
+## cut
+
+$Other::Package::_foo;
+@Other::Package::_bar;
+%Other::Package::_baz;
+&Other::Package::_quux;
+*Other::Package::_xyzzy;
+\$Other::Package::_foo;
+
+#-----------------------------------------------------------------------------
+
+## name Basic passing
+## failures 0
+## cut
+
+$_foo;
+@_bar;
+%_baz;
+&_quux;
+\$_foo;
+$::_foo;
+
+#-----------------------------------------------------------------------------
+
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/Variables/ProtectPrivateVars.run $
+#     $Date: 2008-03-16 15:40:45 -0700 (Sun, 16 Mar 2008) $
+#   $Author: clonezone $
+# $Revision: 2187 $
+##############################################################################
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :

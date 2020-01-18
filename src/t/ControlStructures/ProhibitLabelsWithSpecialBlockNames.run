@@ -1,0 +1,51 @@
+## name Basic passing
+## failures 0
+## cut
+
+BEGIN       { $x = 1; }
+END         { $x = 1; }
+CHECK       { $x = 1; }
+INIT        { $x = 1; }
+UNITCHECK   { $x = 1; }
+
+#-----------------------------------------------------------------------------
+
+## name Failure, cuddled colon
+## failures 5
+## cut
+
+BEGIN:      { $x = 1; }
+END:        { $x = 1; }
+CHECK:      { $x = 1; }
+INIT:       { $x = 1; }
+UNITCHECK:  { $x = 1; }
+
+#-----------------------------------------------------------------------------
+
+## name Failure, uncuddled colon
+## failures 5
+## cut
+
+BEGIN :     { $x = 1; }
+END :       { $x = 1; }
+CHECK :     { $x = 1; }
+INIT :      { $x = 1; }
+UNITCHECK : { $x = 1; }
+
+#-----------------------------------------------------------------------------
+
+##############################################################################
+#      $URL: http://perlcritic.tigris.org/svn/perlcritic/trunk/distributions/Perl-Critic/t/ControlStructures/ProhibitLabelsWithSpecialBlockNames.run $
+#     $Date: 2009-03-07 07:14:51 -0800 (Sat, 07 Mar 2009) $
+#   $Author: clonezone $
+# $Revision: 3231 $
+##############################################################################
+
+# Local Variables:
+#   mode: cperl
+#   cperl-indent-level: 4
+#   fill-column: 78
+#   indent-tabs-mode: nil
+#   c-indentation-style: bsd
+# End:
+# ex: set ts=8 sts=4 sw=4 tw=78 ft=perl expandtab shiftround :
