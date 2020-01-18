@@ -1,6 +1,6 @@
 Name:		perl-Perl-Critic
 Version:	1.118
-Release:	4%{?dist}
+Release:	5%{?dist}
 Summary:	Critique Perl source code for best-practices
 Group:		Development/Libraries
 License:	GPL+ or Artistic
@@ -149,6 +149,9 @@ LC_ALL=en_US ./Build %{!?perl_bootstrap:author}test
 %{_mandir}/man3/Test::Perl::Critic::Policy.3pm*
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.118-5
+- Mass rebuild 2013-12-27
+
 * Thu Jun 20 2013 Paul Howarth <paul@city-fan.org> - 1.118-4
 - BR: perl(Fatal) for the test suite
 
